@@ -1,5 +1,10 @@
 ---
-title: "Forest_Cover_type"
+title: knit: "Forest Cover Type Classification"
+(function(input_file, encoding) {
+  out_dir <- 'docs';
+  rmarkdown::render(input_file,
+ encoding=encoding,
+ output_file=file.path(dirname(input_file), out_dir, 'index.html'))})
 author: "VenkataVivek_Gudapati"
 date: "9/18/2020"
 output: html_document
@@ -11,7 +16,7 @@ rm(list=ls())
 
 
 # Importing the dataset
-dataset =read.csv('C:/Users/asus/Desktop/Forest Cover Type/train.csv', head=T, stringsAsFactors=F, na.strings='')
+dataset =read.csv('C:/Users/asus/Desktop/ForestCoverType/train.csv', head=T, stringsAsFactors=F, na.strings='')
 #removing id,Soil_Type_7 and Soil_Type_15
 dataset=dataset[,c(-1,-22,-30)]
 
